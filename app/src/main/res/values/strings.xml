@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Mindstix</string>
+    <string name="project">Projects</string>
+    <string name="home">Home</string>
+    <string name="career">Career</string>
+</resources>
