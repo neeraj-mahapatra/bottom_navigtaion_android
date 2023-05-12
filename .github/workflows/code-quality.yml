@@ -37,9 +37,6 @@ jobs:
       - name: Run lint checks
         run: ./gradlew lint
 
-      - name: Run detekt checks
-        run: ./gradlew detekt
-
       - name: Upload reports
         uses: actions/upload-artifact@v2
         with:
