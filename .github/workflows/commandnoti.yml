@@ -21,4 +21,4 @@ jobs:
           status: ${{ job.status }}
           fields: repo,commit,author
         env:
-          SLACK_WEBHOOK: ${{ secrets.https://hooks.slack.com/services/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 }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
