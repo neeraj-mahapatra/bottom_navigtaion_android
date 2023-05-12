@@ -1,6 +1,5 @@
-name: Slack_Notification
-on [push]
-
+on: push
+name: Slack Notification Demo
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -9,4 +8,3 @@ jobs:
         with:
           slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
         if: always()
-  
