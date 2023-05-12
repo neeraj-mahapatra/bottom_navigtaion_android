@@ -1,10 +1,27 @@
-on: push
+on:
+  push:
+    branches:
+      - main
+
 name: Slack Notification Demo
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: craftech-io/slack-action@v1
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Perform other build or deployment steps here
+
+      - name: Send Slack notification
+        uses: craftech-io/slack-action@v1
         with:
           slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          message: |
+            Author: ${{ github.actor }}
+            Time: ${{ github.event.head_commit.timestamp }}
+            Topic: ${{ github.event.head_commit.message }}
+            Commit: ${{ github.event.head_commit.url }}
         if: always()
